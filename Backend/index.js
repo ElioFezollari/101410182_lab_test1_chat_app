@@ -3,6 +3,18 @@ require('dotenv').config()
 const { default: mongoose } = require('mongoose');
 const socketIO = require('socket.io')
 const app = express()
+const authRoutes = require('./auth');
+
+const cors = require('cors');
+
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true,
+}));
+
+app.use(express.json());
+app.use('/auth', authRoutes);
+
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
