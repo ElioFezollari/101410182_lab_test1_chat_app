@@ -71,3 +71,53 @@
   .register-wrapper{
     height: 80vh !important;
   }
+
+  .success{
+    color: greenyellow;
+  }
+
+  .error{
+    color: rgb(209, 84, 84);
+  }
+  .chat-wrapper{
+    display: flex;
+  }
+
+  .side-chat{
+    width: 20vw;
+    height: 100vh;
+    background-color: #271A33;
+  }
+
+  .chat-body{
+    width: 100%;
+    background-color: #F8F2F9;
+    height: 100vh;
+  }
+
+  .chat-header{
+    background-color: #FFFFFF;
+    height: 10vh;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .chat-content{
+    height: 70vh;
+    padding: 40px;
+    overflow: auto;
+  }
+
+  .chat-input,.chat-input input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+
+  }
+  .chat-input input{
+    border: 1px solid #ccc;
+    outline: none;
+  }

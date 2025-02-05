@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import user from '../assets/user.svg';
 import lock from "../assets/lock.svg";
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import axios from 'axios';
 import { register } from '../services/API';
 
@@ -15,7 +15,7 @@ function Register() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-
+    const navigate = useNavigate()
     const registerUser = async (e) => {
         e.preventDefault(); 
         setError('');
@@ -32,6 +32,7 @@ function Register() {
               console.log(response.data.token)
                 localStorage.setItem('token', response.data.token); 
                 setSuccess("Registration successful!");
+                navigate('/chat')
             }
         } catch (err) {
           console.log(err)

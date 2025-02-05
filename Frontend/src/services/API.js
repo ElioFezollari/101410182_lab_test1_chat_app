@@ -7,4 +7,11 @@ const register = async(credentials)=>{
   return response
 }
 
-export {register}
+
+const login = async(credentials)=>{
+    const response = await axios.post(baseUrl + "/auth/login",credentials)
+    return response
+  }
+  
+
+export {register,login}
