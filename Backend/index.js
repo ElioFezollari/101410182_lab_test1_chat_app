@@ -44,6 +44,15 @@ const io = socketIO(server, {
 io.on('connection', (socket) => {
   console.log(`New Socket connection: ${socket.id}`);
 
+  socket.on('typing', (data) => {
+    console.log(`${data.sender} is typing...`);
+    if (data.receiver) {
+      socket.to(data.receiver).emit('typing', { sender: data.sender });
+    } else if (data.group) {
+      socket.to(data.group).emit('typing', { sender: data.sender });
+    }
+  });
+
   socket.on('disconnect', (reason) => {
     console.log(`Client disconnected ${socket.id}: ${reason}`);
   });

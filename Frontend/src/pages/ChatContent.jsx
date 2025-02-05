@@ -6,7 +6,6 @@ function ChatContent({ socket, selectedGroup, selectedUser }) {
   const username = localStorage.getItem('username');
 
   useEffect(() => {
-    // Fetch messages when the group or user changes
     if (selectedGroup) {
       getGroupMessages(selectedGroup)
         .then(response => {

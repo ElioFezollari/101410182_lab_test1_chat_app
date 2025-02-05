@@ -118,6 +118,9 @@
     margin: 0 auto;
     margin-top: 10px;
   }
+  .chat-input div{
+    width: 100%;
+  }
   
   .chat-input input {
     width: 90%;
@@ -142,6 +145,10 @@
     background-color: #483758;
   }
   
+  .typing{
+    margin-bottom: 20px;
+    color: #979797;
+  }
 
   .rooms,.users{
     color: #F8F2F9;
