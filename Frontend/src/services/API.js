@@ -13,5 +13,9 @@ const login = async(credentials)=>{
     return response
   }
   
-
-export {register,login}
+  const getUsers = async()=>{
+    const response = await axios.get(baseUrl + "/auth/users",)
+    return response
+  }
+  
+export {register,login,getUsers}

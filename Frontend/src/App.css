@@ -85,6 +85,7 @@
 
   .side-chat{
     width: 20vw;
+    padding: 10px;
     height: 100vh;
     background-color: #271A33;
   }
@@ -110,14 +111,90 @@
     overflow: auto;
   }
 
-  .chat-input,.chat-input input{
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 20px;
-
+  .chat-input {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
   }
-  .chat-input input{
+  
+  .chat-input input {
+    width: 90%;
     border: 1px solid #ccc;
+    border-radius: 10px 0 0 10px;
+    padding: 20px;
     outline: none;
+  }
+  
+  .chat-input button {
+    width: 10%;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-color: #271A33;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .chat-input button:hover {
+    background-color: #483758;
+  }
+  
+
+  .rooms,.users{
+    color: #F8F2F9;
+  }
+
+  .rooms h1,.users h1{
+    font-size: 26px;
+  }
+
+  .rooms h2,.users h2{
+    font-size: 16px;
+  }
+
+  .rooms h1:hover,.users h1:hover{
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .rooms button,.users button{
+    padding: 10px;
+    background-color: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    color: white;
+    text-align: start;
+    border-bottom: 1px solid rgba(255, 255, 255,0.2);
+    margin-top: 5px;
+  }
+  .rooms button:hover,.users button:hover{
+    background-color: #1f1529;
+    cursor: pointer;
+  }
+
+  .rooms div:nth-of-type(1), .users div:nth-of-type(1){
+    border-top: 1px solid rgba(255, 255, 255,0.2);
+  }
+
+  .users{
+    margin-top: 30px;
+  }
+
+  .message-right{
+    text-align: right;
+  }
+
+  .log-out{
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+    position: absolute;
+    bottom: 40px;
+  }
+  .log-out:hover{
+    opacity: 0.8;
+
   }

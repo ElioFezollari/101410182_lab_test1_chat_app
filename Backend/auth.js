@@ -32,12 +32,12 @@ router.post('/register', async (req, res) => {
         await newUser.save();
 
         const token = jwt.sign(
-            { userId: newUser._id, username: newUser.username },
+            { username },
             process.env.SECRET_KEY,
             { expiresIn: '3d' }
         );
 
-        res.status(201).json({ message: 'User registered successfully', token });
+        res.status(201).json({ message: 'User registered successfully', token,username });
     } catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Server error', error });
@@ -59,10 +59,31 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-        res.status(200).json({ message: 'Login successful' });
+        const token = jwt.sign(
+            { username },
+            process.env.SECRET_KEY,
+            { expiresIn: '3d' }
+        );
+
+        res.status(201).json({ message: 'User logged in successfully', token,username });
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
     }
 });
+
+router.get('/users', async (req, res) => {
+    try {
+        const users = await User.find();
+        if (!users) {
+            return res.status(404).json({ message: 'No users found' });
+        }
+
+        res.status(200).json({ users });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error', error });
+    }
+});
+
 
 module.exports = router;

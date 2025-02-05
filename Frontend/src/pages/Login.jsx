@@ -24,6 +24,7 @@ function Login() {
       if (response.status === 201) {
 
         localStorage.setItem('token', response.data.token); 
+        localStorage.setItem('username', response.data.username); 
         navigate('/chat')
         setSuccess("Login successful!");
 

@@ -31,6 +31,7 @@ function Register() {
             if (response.status === 201) {
               console.log(response.data.token)
                 localStorage.setItem('token', response.data.token); 
+                localStorage.setItem('username', response.data.username); 
                 setSuccess("Registration successful!");
                 navigate('/chat')
             }
