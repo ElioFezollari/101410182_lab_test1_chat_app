@@ -66,3 +66,8 @@
     background-color: #F2F2F4;
     border-radius: 5px;
   }
+
+
+  .register-wrapper{
+    height: 80vh !important;
+  }
